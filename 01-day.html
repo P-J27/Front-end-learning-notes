@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+  <div id="app">
+
+  </div>
+  <script>
+    var num = 10;
+    var obj = { num: 20 };
+    obj.fn = (function (num) {
+      this.num = num * 3;
+      num++;
+      return function (n) {
+        this.num += n;
+        num++;
+        console.log(num);
+      }
+    })(obj.num)
+    var fn = obj.fn;
+    console.log(obj)
+   //fn(5)
+   // obj.fn(10)
+   // console.log(num, obj.num);
+  </script>
+</body>
+
+</html>
