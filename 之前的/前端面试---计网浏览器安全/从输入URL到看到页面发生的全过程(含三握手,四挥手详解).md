@@ -75,7 +75,7 @@ DNS 协议提供通过域名查找 IP 地址，或逆向从 IP 地址反查域�
 
 
 
-![img](从输入一个url到显示.assets/16914083b8093f55)
+![img](https://gitee.com/p_pj/picgo/raw/master/img/20210607140032)
 
 
 
@@ -91,7 +91,7 @@ DNS 协议提供通过域名查找 IP 地址，或逆向从 IP 地址反查域�
 
 
 
-![img](从输入一个url到显示.assets/1691406a752c9a9b)
+![img](https://gitee.com/p_pj/picgo/raw/master/img/20210607140034)
 
 
 
@@ -177,7 +177,7 @@ http请求时，除了头部，还有消息实体，一般来说
 
 
 
-![img](从输入一个url到显示.assets/1691409375afa9b0)
+![img](https://gitee.com/p_pj/picgo/raw/master/img/20210607140037)
 
 
 
@@ -235,7 +235,7 @@ PS:
 
 
 
-![img](从输入一个url到显示.assets/1691409e234135e7)
+![img](https://gitee.com/p_pj/picgo/raw/master/img/20210607140040)
 
 
 
@@ -245,7 +245,7 @@ PS:
 
 
 
-![img](从输入一个url到显示.assets/169140a85c0fec37)
+![img](https://gitee.com/p_pj/picgo/raw/master/img/20210607140043)
 
 
 
@@ -253,5 +253,4 @@ PS:
 > 2. 第二次挥手：Server收到FIN后，发送一个ACK给Client，确认序号为收到序号+1（与SYN相同，一个FIN占用一个序号），Server进入CLOSE_WAIT状态。(第二次挥手：由服务器发起的，告诉浏览器，我请求报文接受完了，我准备关闭了，你也准备吧)
 > 3. 第三次挥手：Server发送一个FIN，用来关闭Server到Client的数据传送，Server进入LAST_ACK状态。(第三次挥手：由服务器发起，告诉浏览器，我响应报文发送完了，你准备关闭吧)
 > 4. 第四次挥手：Client收到FIN后，Client进入TIME_WAIT状态，接着发送一个ACK给Server，确认序号为收到序号+1，Server进入CLOSED状态，完成四次挥手。(第四次挥手：由浏览器发起，告诉服务器，我响应报文接受完了，我准备关闭了，你也准备吧)
-
 

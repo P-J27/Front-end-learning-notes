@@ -101,5 +101,5 @@
 
 > 想要真正理解 HTTP 状态码，而不是死记硬背 (虽然很像八股文) ，最好先过一遍下图。每个状态码都不是割裂开的，尝试带着图理解，思考收到 HTTP 请求后的整个处理流程，同时理解 HTTP 协议的 Header, 效率更高。
 
-![img](前端必知道的http常见状态码.assets/16d242d81bd4754b)
+![img](https://gitee.com/p_pj/picgo/raw/master/img/20210607135955)
 
