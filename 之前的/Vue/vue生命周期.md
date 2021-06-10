@@ -2,11 +2,11 @@
 
 ​		首先，每个Vue实例在被`创建`之前都要经过一系列的初始化过程,这个过程就是vue的生命周期。首先看一张图吧~这是官方文档上的图片相信大家一定都会很熟悉,左边是官网的，右边是加了一定注解的。
 
-![image-20210405232117956](vue生命周期.assets/image-20210405232117956.png)
+![image-20210405232117956](https://gitee.com/p_pj/picgo/raw/master/img/20210609161131.png)
 
 
 
-![image-20210405234340811](vue生命周期.assets/image-20210405234340811.png)
+![image-20210405234340811](https://gitee.com/p_pj/picgo/raw/master/img/20210609161708.png)
 
 咱们从上图可以很明显的看出现在`vue2.0`都包括了哪些生命周期的函数了。
 
@@ -96,7 +96,7 @@
 
 打开控制台后，我们可以看到这样的内容
 
-![image-20210405233107900](vue生命周期.assets/image-20210405233107900.png)
+![image-20210405233107900](https://gitee.com/p_pj/picgo/raw/master/img/20210609161712.png)
 
 可以看到一个vue实例在创建过程中调用的几个生命周期钩子。
 
@@ -158,7 +158,7 @@
 
 ##### 2. created钩子函数和beforeMount间的生命周期--创建之后，挂载之前
 
-![clipboard.png](vue生命周期.assets/bVVUb9-1617641378357.png)
+![clipboard.png](https://gitee.com/p_pj/picgo/raw/master/img/20210609161659.png)
 
 在这一阶段发生的事情还是比较多的。
 
@@ -170,7 +170,7 @@ el: '#app',
 
 然后运行可以看到到created的时候就停止了：
 
-![clipboard.png](vue生命周期.assets/bVVUB3.png)
+![clipboard.png](https://gitee.com/p_pj/picgo/raw/master/img/20210609161720.png)
 
 如果我们在后面继续调用vm.$mount(el),可以发现代码继续向下执行了
 
@@ -178,7 +178,7 @@ el: '#app',
 vm.$mount(el) //这个el参数就是挂在的dom接点
 ```
 
-![clipboard.png](vue生命周期.assets/bVVUCG.png)
+![clipboard.png](https://gitee.com/p_pj/picgo/raw/master/img/20210609161722.png)
 
 然后，我们往下看，**template**参数选项的有无对生命周期的影响。
 （1）.如果vue实例对象中有template参数选项，则将其作为模板编译成render函数。
@@ -186,7 +186,7 @@ vm.$mount(el) //这个el参数就是挂在的dom接点
 （3）.可以看到template中的模板优先级要高于outer HTML的优先级。
 修改代码如下, 在HTML结构中增加了一串html，在vue对象中增加了**template选项**：
 
-```
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -215,17 +215,17 @@ vm.$mount(el) //这个el参数就是挂在的dom接点
 
 执行后的结果可以看到在页面中显示的是：
 
-![clipboard.png](vue生命周期.assets/bVVUJT.png)
+![clipboard.png](https://gitee.com/p_pj/picgo/raw/master/img/20210609161735.png)
 
 那么将vue对象中template的选项注释掉后打印如下信息：
 
-![clipboard.png](vue生命周期.assets/bVVUJ3.png)
+![clipboard.png](https://gitee.com/p_pj/picgo/raw/master/img/20210609161738.png)
 
 这下就可以想想为什么**el的判断**要在template之前了~是因为vue需要通过el找到对应的outer template。
 
 在vue对象中还有一个**render函数**，它是以`createElement`作为参数，然后做渲染操作，而且我们可以直接嵌入JSX.
 
-```
+```vue
 new Vue({
     el: '#app',
     render: function(createElement) {
@@ -243,7 +243,7 @@ new Vue({
 
 ##### **3. beforeMount和mounted 钩子函数间的生命周期**
 
-![clipboard.png](vue生命周期.assets/bVVUTK.png)
+![clipboard.png](https://gitee.com/p_pj/picgo/raw/master/img/20210609161756.png)
 
 可以看到此时是给vue实例对象添加**$el成员**，并且替换掉挂在的DOM元素。因为在之前console中打印的结果可以看到**beforeMount**之前el上还是undefined。
 
@@ -251,7 +251,7 @@ new Vue({
 
 注意看下面截图：
 
-![clipboard.png](vue生命周期.assets/bVVUYC.png)
+![clipboard.png](https://gitee.com/p_pj/picgo/raw/master/img/20210609161758.png)
 
 
 
@@ -264,7 +264,7 @@ new Vue({
 
 ##### **5. beforeUpdate钩子函数和updated钩子函数间的生命周期**
 
-![clipboard.png](vue生命周期.assets/bVVU0E.png)
+![clipboard.png](https://gitee.com/p_pj/picgo/raw/master/img/20210609161759.png)
 
 当vue发现data中的数据发生了改变，会**触发对应组件的重新渲染**，先后调用**beforeUpdate**和**updated**钩子函数。我们在console中输入：
 
@@ -274,17 +274,17 @@ vm.message = '触发组件更新'
 
 发现触发了组件的更新：
 
-![clipboard.png](vue生命周期.assets/bVVU55.png)
+![clipboard.png](https://gitee.com/p_pj/picgo/raw/master/img/20210609161801.png)
 
 ##### **6.beforeDestroy和destroyed钩子函数间的生命周期**
 
-![clipboard.png](vue生命周期.assets/bVVU6C.png)
+![clipboard.png](https://gitee.com/p_pj/picgo/raw/master/img/20210609161805.png)
 
 **beforeDestroy**钩子函数在实例销毁之前调用。在这一步，实例仍然完全可用。
 
 **destroyed**钩子函数在Vue 实例销毁后调用。调用后，Vue 实例指示的所有东西都会解绑定，所有的事件监听器会被移除，所有的子实例也会被销毁。
 
-![image-20210406003712830](vue生命周期.assets/image-20210406003712830.png)
+![image-20210406003712830](https://gitee.com/p_pj/picgo/raw/master/img/20210609161808.png)
 
 #### 总结
 
@@ -297,4 +297,4 @@ vm.message = '触发组件更新'
 
 当然，还有更多，继续探索中......
 
-![3477288873-5808ad0a8d62c_articlex](vue生命周期.assets/bVEDKF.png)
+![3477288873-5808ad0a8d62c_articlex](https://gitee.com/p_pj/picgo/raw/master/img/20210609161812.png)
