@@ -16,7 +16,7 @@ p { font-size:20px; }
 
 - 相对长度单位、绝对长度单位
 
-  ![image-20210515175402012](Untitled.assets/image-20210515175402012.png)
+  ![image-20210515175402012](https://gitee.com/p_pj/picgo/raw/master/img/20210618235710.png)
 
 #### ![img](data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==)「2. font-family」
 
@@ -198,4 +198,4 @@ p {
 
 ------
 
-## 
+#
