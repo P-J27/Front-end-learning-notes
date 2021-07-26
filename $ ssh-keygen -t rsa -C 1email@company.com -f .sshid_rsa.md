@@ -1,0 +1,1 @@
+$ ssh-keygen -t rsa -C "1email@company.com" -f ~/.ssh/id_rsa
