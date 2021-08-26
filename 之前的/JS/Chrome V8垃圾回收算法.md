@@ -42,7 +42,7 @@ V8垃圾回收策略主要基于`分代式垃圾回收机制`。现代的垃圾�
 
 
 
-![img](Chrome V8垃圾回收算法.assets/16904df8de47c353)
+![img](https://gitee.com/p_pj/pig/raw/master/img/16904df8de47c353)
 
 
 
@@ -75,13 +75,13 @@ Cheney算法是一种采用复制的方式实现的垃圾回收算法。它将�
 
 
 
-![是否经历过Scavenge回收](Chrome V8垃圾回收算法.assets/16904eb72b5b7ceb)
+![是否经历过Scavenge回收](https://gitee.com/p_pj/pig/raw/master/img/16904eb72b5b7ceb)
 
 
 
 
 
-![To空间的使用应超过25%时](Chrome V8垃圾回收算法.assets/16904ebc54c74a12)
+![To空间的使用应超过25%时](https://gitee.com/p_pj/pig/raw/master/img/16904ebc54c74a12)
 
 
 
@@ -96,7 +96,7 @@ Cheney算法是一种采用复制的方式实现的垃圾回收算法。它将�
 
 
 
-![img](Chrome V8垃圾回收算法.assets/16904ed3e993dca1)
+![img](https://gitee.com/p_pj/pig/raw/master/img/16904ed3e993dca1)
 
 
 
@@ -108,7 +108,7 @@ Cheney算法是一种采用复制的方式实现的垃圾回收算法。它将�
 
 
 
-![img](Chrome V8垃圾回收算法.assets/16904ed8d55fb20a)
+![img](https://gitee.com/p_pj/pig/raw/master/img/16904ed8d55fb20a)
 
 
 

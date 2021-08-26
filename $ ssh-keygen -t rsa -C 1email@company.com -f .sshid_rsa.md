@@ -1,1 +1,2 @@
-$ ssh-keygen -t rsa -C "1email@company.com" -f ~/.ssh/id_rsa
+$ ssh-keygen -t rsa -C "pengjian_i@didiglobal.com" -f ~/.ssh/gitlab_rsa
+
