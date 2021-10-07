@@ -139,3 +139,13 @@ git merge dev			合并分支
 
 删除分支：git branch –d name
 
+#### 七：撤销命令
+
+1. 运行`git reflog`命令查看你的历史变更记录
+
+   ![image-20210902174129224](https://gitee.com/p_pj/pig/raw/master/img/image-20210902174129224.png)
+
+2. 然后用`git reset --hard HEAD@{n}`，（n是你要回退到的引用位置）回退。
+
+   比如上图可运行 `git reset --hard 40a9a83`
+
