@@ -1,0 +1,15 @@
+- 是否占据空间
+  - display:none  不占位置，**产生回流**
+  - visibility：hidden、opacity：0 占位置，**只会引起页面重绘**
+- 子元素是否继承
+  - display：none，不可继承，父元素已经不存在了，子元素也不会显示
+  - visibility：hidden 会被继承，子代设置visibility：visible可以显示
+  - opacity: 0 也会被子元素继承，但是不能通过设置子元素opacity: 1使其重新显示
+- 事件绑定
+  - display:none 的元素都已经不再页面存在了，因此肯定也无法触发它上面绑定的事件
+  - visibility:hidden 元素上绑定的事件也无法触发
+  - opacity: 0元素上面绑定的事件是可以触发的。
+- 过渡动画
+  - transition对于display肯定是无效的，大家应该都知道
+  - transition对于visibility也是无效的
+  - transition对于opacity是有效，大家也是知道的:).
