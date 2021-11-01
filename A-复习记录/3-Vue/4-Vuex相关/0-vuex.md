@@ -23,7 +23,7 @@
 - OK，从理论上理解了状态管理之后，让我们从实际的代码再来看看状态管理。
   - 毕竟，Talk is cheap, Show me the code.(来自Linus)
 
-![image-20210401221415365](Vuex详解.assets/image-20210401221415365.png)
+![image-20210401221415365](https://gitee.com/p_pj/pig/raw/master/img/image-20210401221415365.png)
 
 我们先来看看单界面的状态管理吧.
 
@@ -40,11 +40,11 @@
 
 
 
-![image-20210401221639890](Vuex详解.assets/image-20210401221639890.png)
+![image-20210401221639890](https://gitee.com/p_pj/pig/raw/master/img/image-20210401221639890.png)
 
 - 写点代码，加深理解：
 
-  ![image-20210401221854348](Vuex详解.assets/image-20210401221854348.png)
+  ![image-20210401221854348](https://gitee.com/p_pj/pig/raw/master/img/image-20210401221854348.png)
 
 #### **多界面状态管理**
 
@@ -62,7 +62,7 @@
 
 #### Vuex状态管理图例
 
-![image-20210401222215148](Vuex详解.assets/image-20210401222215148.png)
+![image-20210401222215148](https://gitee.com/p_pj/pig/raw/master/img/image-20210401222215148.png)
 
 #### 基本使用
 
@@ -149,7 +149,7 @@ new Vue({
   - **通过mutation管理状态（state）**：在store模块中会 有一个mutations对象，在里面可以放置一些修改state对象内容的方法，这些方法都会包含一个state的参数以后只要是修改state的内容都必须通过`mutation来进行管理`。修改mutation的内容需要使用`commit方法`，commit带俩参数.具体见下文
 
 
-![image-20210401233820330](Vuex详解.assets/image-20210401233820330.png)
+![image-20210401233820330](https://gitee.com/p_pj/pig/raw/master/img/image-20210401233820330.png)
 
 #### Vuex核心概念
 
@@ -249,24 +249,47 @@ getters:{       /*    	这样stuByID返回的就是一个函数fn(),即stuByID()
 ###### mutation的定义方式：
 
 ```js
-mutations:{    //可以定义方法，方法会有一个默认的state参数    increment() {       this.state.counter++    },    //传入一个参数    incrementCount(state,counte) {         state.counter+=counte    },                    /*        过mutation更新数据的时候, 有可能我们希望携带一些额外的参数		被称为是mutation的载荷(Payload)        但是如果参数不是一个呢?		我们有很多参数需要传递.		这个时候, 我们通常会以对象的形式传递, 也就是payload是一个对象.		这个时候可以再从对象中取出相关的信息.	*/    //更新多个参数（多个参数打包成一个对象传入）    changeCount(state,payload) { 		state.counter+=payload.count    }}
+mutations:{    
+  //可以定义方法，方法会有一个默认的state参数    
+  increment() {       
+    this.state.counter++    
+  },    
+    //传入一个参数    
+    incrementCount(state,counte) {     
+      state.counter+=counte    
+    },                   
+      /* 过mutation更新数据的时候, 有可能我们希望携带一些额外的参数,被称为是mutation的载荷(Payload) 但是如果参数不是一个呢?我们有很多参数需要传递.	
+    这个时候, 我们通常会以对象的形式传递, 也就是payload是一个对象.		这个时候可以再从对象中取出相关的信息.	*/    
+      //更新多个参数（多个参数打包成一个对象传入） 
+      changeCount(state,payload) { 		
+        state.counter+=payload.count  
+      }}
 ```
 
 ###### 通过mutation更新
 
 ```js
-increment(){    this.$store.commit('increment')//字符串对应mutations里面的回调函数}incrementCount(counte){    this.$store.commit('incrementCount',counte)//字符串称类型，对应mutations里面的回调函数}changeCount(){    this.$store.commit('changeCount',{count:4})}
+increment(){    
+  this.$store.commit('increment')//字符串对应mutations里面的回调函数
+},
+incrementCount(counte){   
+  this.$store.commit('incrementCount',counte)
+  //字符串称类型，对应mutations里面的回调函数
+},
+ changeCount(){   
+  this.$store.commit('changeCount',{count:4})
+}
 ```
 
 ###### Mutation提交风格
 
 上面的通过commit进行提交是一种普通的方式，Vue还提供了另外一种风格, 它是一个包含`type属性`的对象
 
-![image-20210403190104694](Vuex详解.assets/image-20210403190104694.png)
+![image-20210403190104694](https://gitee.com/p_pj/pig/raw/master/img/image-20210403190104694.png)
 
 Mutation中的处理方式是`将整个commit的对象作为payload使用`, 所以代码没有改变, 依然如下:
 
-![image-20210403190120766](Vuex详解.assets/image-20210403190120766.png)
+![image-20210403190120766](https://gitee.com/p_pj/pig/raw/master/img/image-20210403190120766.png)
 
 ##### mutation的响应规则
 
@@ -287,7 +310,7 @@ Mutation中的处理方式是`将整个commit的对象作为payload使用`, 所�
 
 ###### 示例
 
-![image-20210403193218612](Vuex详解.assets/image-20210403193218612.png)
+![image-20210403193218612](https://gitee.com/p_pj/pig/raw/master/img/image-20210403193218612.png)
 
 ##### Mutation同步函数
 
@@ -298,11 +321,11 @@ Mutation中的处理方式是`将整个commit的对象作为payload使用`, 所�
 
 - 比如我们之前的代码, 当执行更新时, devtools中会有如下信息: 
 
-  ![image-20210403193520335](Vuex详解.assets/image-20210403193520335.png)
+  ![image-20210403193520335](https://gitee.com/p_pj/pig/raw/master/img/image-20210403193520335.png)
 
 - 但是, 如果Vuex中的代码, 我们使用了异步函数: 
 
-  ![image-20210403193547109](Vuex详解.assets/image-20210403193547109.png)
+  ![image-20210403193547109](https://gitee.com/p_pj/pig/raw/master/img/image-20210403193547109.png)
 
 - 你会发现state中的info数据一直没有被改变, 因为他无法追踪到.
 
@@ -319,7 +342,7 @@ Mutation中的处理方式是`将整个commit的对象作为payload使用`, 所�
 
 - Action的基本使用代码如下
 
-  ![image-20210403194018733](Vuex详解.assets/image-20210403194018733.png)
+  ![image-20210403194018733](https://gitee.com/p_pj/pig/raw/master/img/image-20210403194018733.png)
 
 - context是什么?
 
@@ -337,12 +360,16 @@ Mutation中的处理方式是`将整个commit的对象作为payload使用`, 所�
 - 在Vue组件中, 如果我们调用action中的方法, 那么就需要使用`dispatch`
 
 ```js
-methods:{    increment(){        this.$store.dispatch('increment')    }}
+methods:{    
+  increment(){  
+    this.$store.dispatch('increment')  
+  }
+}
 ```
 
 - 同样的, 也是支持传递payload
 
-![image-20210403194609564](Vuex详解.assets/image-20210403194609564.png)
+![image-20210403194609564](https://gitee.com/p_pj/pig/raw/master/img/image-20210403194609564.png)
 
 ###### Action返回的Promise
 
@@ -350,7 +377,7 @@ methods:{    increment(){        this.$store.dispatch('increment')    }}
 
 OK, 我们来看下面的代码:
 
-![image-20210403194746609](Vuex详解.assets/image-20210403194746609.png)
+![image-20210403194746609](https://gitee.com/p_pj/pig/raw/master/img/image-20210403194746609.png)
 
 ##### Modules模块
 
@@ -364,7 +391,7 @@ OK, 我们来看下面的代码:
 
 ###### 我们按照什么样的方式来组织模块呢? 
 
-![image-20210403195412460](Vuex详解.assets/image-20210403195412460.png)
+![image-20210403195412460](https://gitee.com/p_pj/pig/raw/master/img/image-20210403195412460.png)
 
 
 
@@ -372,17 +399,17 @@ OK, 我们来看下面的代码:
   - 我们在moduleA中添加state、mutations、getters
   - mutation和getters接收的第一个参数是局部状态对象
 
-![image-20210403195818918](Vuex详解.assets/image-20210403195818918.png)
+![image-20210403195818918](https://gitee.com/p_pj/pig/raw/master/img/image-20210403195818918.png)
 
 - actions的写法呢? 接收一个context参数对象
 
   - 局部状态通过 context.state 暴露出来，根节点状态则为 context.rootState
 
-  ![image-20210403201636564](Vuex详解.assets/image-20210403201636564.png)
+  ![image-20210403201636564](https://gitee.com/p_pj/pig/raw/master/img/image-20210403201636564.png)
 
 - 如果getters中也需要使用全局的状态, 可以接受更多的参数
 
-  ![image-20210403201659819](Vuex详解.assets/image-20210403201659819.png)
+  ![image-20210403201659819](https://gitee.com/p_pj/pig/raw/master/img/image-20210403201659819.png)
 
 
 
@@ -422,4 +449,4 @@ OK, 我们来看下面的代码:
 > 当我们的Vuex帮助我们管理过多的内容时, 好的项目结构可以让我们的代码更加清晰.
 > 核心思想就是抽离成文件，然后导入该文件，说着容易，但是做起来好像也没那么简单
 
-![image-20210403201739443](https://gitee.com/p_pj/picgo/raw/master/img/20211101075945.png)
+![image-20210403201739443](https://gitee.com/p_pj/pig/raw/master/img/20211101075945.png)
