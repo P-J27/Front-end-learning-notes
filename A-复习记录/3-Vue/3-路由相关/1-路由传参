@@ -100,7 +100,7 @@ this.$route.params.id
 
 - $route为当前router跳转对象里面可以获取name、path、query、params等 
 
-  ![image-20210404010701605](https://gitee.com/p_pj/picgo/raw/master/img/20211101080343.png)
+  ![image-20210404010701605](https://gitee.com/p_pj/picgo/raw/master/img/20211101080352.png)
 
 
 
