@@ -67,4 +67,3 @@ while (ary.some(Array.isArray)) {
 }
 ```
 
-
